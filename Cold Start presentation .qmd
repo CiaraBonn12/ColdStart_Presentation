@@ -1,0 +1,28 @@
+---
+title: "Data Science Context Presentation"
+author: "Ciara Bonnett"
+format: html
+editor: visual
+---
+
+```{mermaid}
+graph TD
+  A[New User Signs Up] --> B{Any Data?}
+  B -- No --> C[Global Baseline / Popular Movies]
+  B -- Minimal --> D[Content-Based Filtering / Genres]
+  D --> E[User Rates 5+ Movies]
+  E --> F[Collaborative Filtering / UBCF]
+  F --> G[Hyper-Personalized Feed]
+```
+
+```{r}
+# --- The Cold Start Failure ---
+# Trying to get 'known' data from an undefined evaluation scheme
+# This triggers the 'object not found' error because the user is new!
+
+# results <- getData(e, "known") 
+
+# ERROR: object 'e' not found
+# Analysis: The system cannot evaluate a user who isn't part of the 
+# training/testing sets yet.
+```
